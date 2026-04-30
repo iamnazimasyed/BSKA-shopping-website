@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B S K A — New Wave Apparel</title>
+  </head>
+  <body class="bg-black text-white selection:bg-accent selection:text-black">
+    <div id="app">
+      <!-- Announcement Bar -->
+      <div id="announcement-bar" class="fixed top-0 left-0 w-full h-[35px] bg-accent flex items-center justify-between px-10 z-[1001] text-black font-sans font-semibold text-[11px] uppercase tracking-widest">
+        <button id="prev-announcement" class="hover:opacity-60 transition-opacity">&lt; PREVIOUS</button>
+        <p id="announcement-text" class="text-center flex-1">GET FREE SHIPPING ON ALL PREPAID ORDERS — ACROSS INDIA</p>
+        <button id="next-announcement" class="hover:opacity-60 transition-opacity">NEXT &gt;</button>
+      </div>
+
+      <!-- Navbar -->
+      <nav class="fixed top-[35px] left-0 w-full bg-black px-10 py-8 flex items-center justify-between h-[80px] z-[1000]">
+        <div class="flex items-center gap-8 font-sans text-[12px] uppercase tracking-widest text-white">
+          <button data-page="home" class="nav-link text-accent border-b border-accent pb-1 transition-all">Home</button>
+          <button data-page="shop" class="nav-link hover:text-accent transition-all">Shop</button>
+          <button data-page="about" class="nav-link hover:text-accent transition-all">About</button>
+          <button data-page="contact" class="nav-link hover:text-accent transition-all">Contact</button>
+        </div>
+        <h1 class="font-display text-3xl text-accent tracking-tighter absolute left-1/2 -translate-x-1/2 cursor-pointer" id="logo">B S K A</h1>
+        <div class="flex items-center gap-8">
+          <input type="text" placeholder="SEARCH" class="bg-zinc-900 border border-zinc-800 text-[10px] rounded-full px-4 py-1.5 w-40 outline-none focus:border-accent transition-all tracking-widest" />
+          <div class="flex items-center gap-6">
+            <button id="login-btn" class="opacity-80 hover:text-accent transition-all">👤</button>
+            <div id="user-info" class="hidden text-[10px] uppercase tracking-widest opacity-60"></div>
+            <button id="logout-btn" class="hidden opacity-80 hover:text-accent transition-all">LogOut</button>
+            <div class="relative cursor-pointer" id="cart-btn">
+              <span class="text-xl opacity-80 hover:text-accent transition-all">🛒</span>
+              <span id="cart-count" class="absolute -top-2 -right-2 bg-accent text-black text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold hidden">00</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content Container -->
+      <main id="main-content" class="pt-[160px] pb-20 px-10 max-w-[1400px] mx-auto min-h-screen">
+        <!-- Content will be injected here dynamically -->
+      </main>
+
+      <!-- Cart Drawer -->
+      <div id="cart-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[2000] hidden"></div>
+      <div id="cart-drawer" class="fixed right-0 top-0 h-full w-full max-w-2xl bg-black border-l border-zinc-900 z-[2001] p-10 flex flex-col shadow-2xl translate-x-full transition-transform duration-500 ease-out">
+        <div class="flex items-end justify-between mb-10 pb-6 border-b border-zinc-800">
+          <h2 class="text-6xl font-light tracking-tighter uppercase italic text-white text-wrap">Shopping Bag</h2>
+          <div class="flex flex-col items-end">
+            <button id="close-cart" class="text-3xl opacity-50 hover:opacity-100 transition-all mb-4">✕</button>
+            <p id="bag-stats" class="text-zinc-500 text-[10px] uppercase tracking-[0.3em]">0 ITEMS TOTAL</p>
+          </div>
+        </div>
+        <div id="cart-items" class="flex-1 overflow-y-auto space-y-4 no-scrollbar pr-4">
+          <!-- Cart items will be injected here -->
+        </div>
+        <div class="mt-10 pt-10 border-t border-zinc-800">
+          <div class="space-y-4 mb-8 max-w-xs ml-auto">
+            <div class="flex justify-between text-xs tracking-widest uppercase opacity-60">
+              <span>Subtotal</span><span id="cart-subtotal">Rs. 0</span>
+            </div>
+            <div class="flex justify-between text-xs tracking-widest uppercase opacity-60">
+              <span>Shipping</span><span class="text-accent font-bold italic">Free</span>
+            </div>
+            <div class="pt-4 border-t border-zinc-800 flex justify-between items-end text-white">
+              <span class="text-lg uppercase tracking-[0.2em]">Total</span>
+              <span id="cart-total" class="text-3xl text-accent font-bold">Rs. 0</span>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <button class="flex-1 py-5 bg-accent text-black font-bold rounded-full text-xs uppercase tracking-[0.2em] transition-transform active:scale-95">Proceed to Checkout</button>
+            <button id="continue-shopping" class="px-8 py-5 border border-zinc-700 rounded-full text-[10px] uppercase tracking-widest hover:bg-zinc-900 transition-colors">Back to Shop</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="w-full px-10 py-10 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest opacity-40 font-sans">
+        <div>© 2026 BSKA — NEW WAVE APPAREL</div>
+        <div class="flex gap-8">
+          <a href="#" class="hover:opacity-100 transition-opacity">Shipping Policy</a>
+          <a href="#" class="hover:opacity-100 transition-opacity">Returns</a>
+          <a href="#" class="hover:opacity-100 transition-opacity">Privacy</a>
+        </div>
+        <div>POWERED BY BSKA STUDIOS</div>
+      </footer>
+
+      <!-- Custom Cursor -->
+      <div id="cursor" class="cursor-dot hidden md:block"></div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
